@@ -373,7 +373,7 @@ static kal_int32 async_write_cmos_sensor_8(struct subdrv_ctx *ctx,
 
 static int write_cmos_sensor_8(struct subdrv_ctx *ctx, u16 reg, u8 val)
 {
-	int ret;
+	int ret = 0;
 	if (enable_async) {
 		kal_uint16 *rembrandtimx582_write_setting = 	kmalloc(2 * sizeof(kal_uint16), GFP_KERNEL);
 		rembrandtimx582_write_setting[0] = reg;
