@@ -2470,6 +2470,7 @@ static int panel_doze_enable(struct drm_panel *panel,
 	char level2_key_disable_tb[] = {0xF0, 0xA5, 0xA5};
 	atomic_set(&doze_enable, 1);
 	pr_info("%s !+\n", __func__);
+	(void)ctx;
 
 	if (!lcm_panel_is_p0())
 		cb(dsi, handle, backlight_off_tb, ARRAY_SIZE(backlight_off_tb));
