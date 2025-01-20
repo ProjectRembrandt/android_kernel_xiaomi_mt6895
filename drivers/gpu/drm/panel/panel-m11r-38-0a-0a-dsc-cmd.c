@@ -3,12 +3,6 @@
  * Copyright (c) 2019 MediaTek Inc.
  */
 
-/* Attention
- *  1."FPS_INIT_INDEX" is related to switch frame rate,when modifying the initial code should modify it.
- *  owner: litao31@xiaomi.com
- *  date: 2022/11/04
- *  changeId: 2505945
- */
 #include <linux/backlight.h>
 #include <drm/drm_mipi_dsi.h>
 #include <drm/drm_panel.h>
@@ -38,7 +32,6 @@
 #include "../mediatek/mediatek_v2/mtk_drm_graphics_base.h"
 #include "../mediatek/mediatek_v2/mtk_log.h"
 #endif
-#include "../mediatek/mediatek_v2/mi_disp/mi_dsi_panel_count.h"
 #include "../mediatek/mediatek_v2/mi_disp/mi_panel_ext.h"
 #include "mi_dsi_panel.h"
 

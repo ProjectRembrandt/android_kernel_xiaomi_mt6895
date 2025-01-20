@@ -95,6 +95,44 @@ struct mtk_dsi_mgr {
 	struct mtk_dsi *slave;
 };
 
+struct lcm {
+	struct device *dev;
+	struct drm_panel panel;
+	struct backlight_device *backlight;
+	struct gpio_desc *reset_gpio;
+	struct gpio_desc *bias_pos;
+	struct gpio_desc *dvdd_gpio;
+	struct gpio_desc *cam_gpio;
+	struct gpio_desc *leden_gpio;
+	struct gpio_desc *vddi_gpio;
+
+	bool prepared;
+	bool enabled;
+	bool hbm_en;
+	bool wqhd_en;
+	bool dc_status;
+	bool hbm_enabled;
+	bool lhbm_en;
+	bool doze_suspend;
+
+	int error;
+	const char *panel_info;
+	int dynamic_fps;
+	u32 doze_brightness_state;
+
+	struct pinctrl *pinctrl_gpios;
+	struct pinctrl_state *err_flag_irq;
+
+	u32 max_brightness_clone;
+	u32 factory_max_brightness;
+	struct mutex panel_lock;
+	int bl_max_level;
+	int gir_status;
+	int spr_status;
+	int crc_level;
+	int peak_hdr_status;
+};
+
 struct mi_dsi_panel_cfg {
 	struct mtk_dsi *dsi;
 
