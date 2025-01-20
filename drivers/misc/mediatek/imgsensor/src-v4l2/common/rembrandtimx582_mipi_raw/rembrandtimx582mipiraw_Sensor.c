@@ -2758,7 +2758,7 @@ break;
 		{
 		kal_uint8 index =
 			*(((kal_uint8 *)feature_para) + (*feature_para_len));
-
+		(void)index;
 		}
 		break;
 	case XIAOMI_FEATURE_LOCK_SETTING_WORK_QUEUE:
